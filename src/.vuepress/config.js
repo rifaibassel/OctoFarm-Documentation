@@ -1,4 +1,8 @@
+const fs = require('fs');
+const path = require('path');
+
 const { description } = require('../../package')
+const templateBase = `${__dirname}/../`
 
 module.exports = {
   /**
@@ -59,46 +63,10 @@ module.exports = {
       },
     ],
     sidebar: {
-      '/guides/': [
-        {
-          title: 'User Guides',
-          collapsable: false,
-          children: [
-            '/',
-          ]
-        }
-      ],
-      '/api/': [
-        {
-          title: 'API Documentation',
-          collapsable: false,
-          children: [
-            '/',
-          ]
-        }
-      ],
-      '/contributing/': [
-        {
-          title: 'Contributing',
-          collapsable: false,
-          children: [
-            '/',
-          ]
-        }
-      ],
-      '/installation/': [
-        {
-          title: 'Installation',
-          collapsable: false,
-          children: [
-            'docker',
-            'environment',
-            'service',
-            'ubuntu',
-            'debian'
-          ]
-        }
-      ],
+      '/installation/': generateSideBar("installation", "Installation Instructions"),
+      '/guides/': generateSideBar("guides", "Application Guides"),
+      '/api/': generateSideBar("api", "API Usage"),
+      '/contributing/': generateSideBar("contributing", "Contributing Guidelines")
     }
   },
 
@@ -109,4 +77,19 @@ module.exports = {
     '@vuepress/plugin-back-to-top',
     '@vuepress/plugin-medium-zoom',
   ]
+}
+
+function generateSideBar(folder, title){
+  const extensions = [".md"];
+
+  console.log(templateBase)
+
+  const files = fs
+      .readdirSync(path.join(`${templateBase}${folder}`))
+      .filter((item) =>
+          item.toLowerCase() !== `readme.md` &&
+          fs.statSync(path.join(`${templateBase}${folder}`, item)).isFile() &&
+          extensions.includes(path.extname(item))
+      )
+  return [{title: title, children: [...files]}];
 }
