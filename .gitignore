@@ -18,5 +18,5 @@ TODOs.md
 .temp
 
 # Docs dist directory
-src/.vuepress
+src/.vuepress/dist
 
