@@ -1,6 +1,6 @@
 # Docker
 
-Docker is a great tool! Using `docker-compose` is better and `portainer` is most awesome! Please read the following before continuing:
+Docker is a great tool! Using `docker-compose` is better and `portainer` is most awesome! Please read the following before continuing:\
 NOTE we assume you are familiar with `docker` and `docker-compose`. These are great tools for isolating your software deployment (+), but it be quite new to some users (-).
    - We cannot support each custom scenario or setup!
    - Take good care of checking your device's memory limits, architecture and CPU power (`docker stats` and for example `mem_limit: 400m` for 400MB limit in docker-compose)
@@ -26,7 +26,7 @@ We don't advise using MongoDB without username/password, although you can do so 
 
 Why the MongoDB `?authSource=admin` addition, you might ask? Just to make sure the right table is checked for the username you setup, if that's the case. This table is named `admin` by default. Glad you asked!
 
-```
+```docker
 # Just pick a compose spec version >3
 version: '3.4' 
 
@@ -68,7 +68,7 @@ services:
 ```
 ### Docker image 'monolithic-latest'
 The monolithic image does not require MongoDB externally, but it also has less control over MongoDB setup:
-```
+```docker
  octofarm-monolithic:
     container_name: octofarm-monolithic
     image: octofarm/octofarm:monolithic-latest

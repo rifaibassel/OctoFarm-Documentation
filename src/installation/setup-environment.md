@@ -25,7 +25,7 @@ The following variables are read and used by OctoFarm at startup. Always restart
 
 ## The `.env` file
 A very simple text file with a variable per line. The following `.env` is often already enough to make sure OctoFarm works as you like:
-```
+```bash
 MONGO=mongodb://127.0.0.1:27017/octofarm
 OCTOFARM_PORT=4000
 ```
@@ -47,7 +47,7 @@ Be aware of the following notes:
 Entirely up to you!
 
 Here is how the environment section in docker would look.
-```
+```docker
 services:
   octofarm:
     # ... other sections here

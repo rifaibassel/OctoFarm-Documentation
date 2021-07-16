@@ -31,10 +31,12 @@ module.exports = {
    * ref：https://v1.vuepress.vuejs.org/theme/default-theme-config.html
    */
   themeConfig: {
-    repo: '',
+    repo: 'https://github.com/OctoFarm/OctoFarm-Documentation',
     editLinks: false,
     docsDir: '',
     editLinkText: '',
+    nextLinks: false,
+    prevLinks: false,
     lastUpdated: false,
     nav: [
       // {
@@ -67,23 +69,22 @@ module.exports = {
       '/guides/': generateSideBar("guides", "Application Guides"),
       '/api/': generateSideBar("api", "API Usage"),
       '/contributing/': generateSideBar("contributing", "Contributing Guidelines")
-    }
+    },
+    sidebarDepth: 2
   },
 
   /**
    * Apply plugins，ref：https://v1.vuepress.vuejs.org/zh/plugin/
    */
   plugins: [
-    '@vuepress/plugin-back-to-top',
-    '@vuepress/plugin-medium-zoom',
+    ['vuepress-plugin-code-copy', {
+      staticIcon: true
+    }]
   ]
 }
 
 function generateSideBar(folder, title){
   const extensions = [".md"];
-
-  console.log(templateBase)
-
   const files = fs
       .readdirSync(path.join(`${templateBase}${folder}`))
       .filter((item) =>
