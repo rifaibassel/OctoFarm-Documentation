@@ -8,10 +8,11 @@ NOTE we assume you are familiar with `docker` and `docker-compose`. These are gr
 
 ## Tags
 
-we provide `octofarm/octofarm:latest`, `octofarm/octofarm:alpine-latest` and `octofarm/octofarm:monolithic-latest`
+We provide `octofarm/octofarm:latest`, `octofarm/octofarm:alpine-latest` and `octofarm/octofarm:monolithic-latest`
 - `latest` and `alpine-latest` require you to run MongoDB or a MongoDB container (see compose below)
 - `monolithic` does not require a separate MongoDB, but we at OctoFarm personally like MongoDB to be separate (docker = isolation remember?).
 
+You can check out the latest development version by replacing `-latest` with `-dev` so `octofarm/octofarm:dev`
 
 ## Docker Run
 
