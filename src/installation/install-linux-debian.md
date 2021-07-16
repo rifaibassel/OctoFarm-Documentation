@@ -1,4 +1,4 @@
-# Installing OctoFarm on Linux (Ubuntu)
+# Linux (Debian)
 
 ## 1 Prepare your system
 First we need to prep the system for the required applications used to run OctoFarm.
@@ -7,12 +7,10 @@ First we need to prep the system for the required applications used to run OctoF
 - Add MongoDB's Repository Key\
 `wget -qO - https://www.mongodb.org/static/pgp/server-4.4.asc | sudo apt-key add`
 - Add the MongoDB Repository (Choose by your current ubuntu version)
-    - 20.04:\
-`echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/4.4 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-4.4.list`\
-    - 18.08:\
-`echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu bionic/mongodb-org/4.4 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-4.4.list`\
-    - 16.04:\
-`echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/4.4 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-4.4.list`
+    - Debian 10:\
+`echo "deb http://repo.mongodb.org/apt/debian buster/mongodb-org/4.4 main" | sudo tee /etc/apt/sources.list.d/mongodb-org-4.4.list`\
+    - Debian 9:\
+`echo "deb http://repo.mongodb.org/apt/debian stretch/mongodb-org/4.4 main" | sudo tee /etc/apt/sources.list.d/mongodb-org-4.4.list`\
 
 ### 1.2 Setup NodeJS LTS v14 repository
 - Run the node repository setup\
@@ -64,7 +62,7 @@ After all that we can finally download OctoFarm from the latest release and star
 - Once inside the directory we can run the start command for OctoFarm\
 `npm start`
 
-## 4 Profit! OctoFarm should now be running and available to access from your web browser
+## 4 Profit!
 - You can double check the OctoFarm service is running by using `pm2 list` from anywhere on your console. If you see 'OctoFarm' and 'Running' on the output you should be good to access the web interface. 
 - OctoFarm runs on port 4000 by default. So you'll be able to access it in a web browser from:\
 `http://{your systems ip address}:4000`

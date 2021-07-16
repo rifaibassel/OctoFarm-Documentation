@@ -1,4 +1,4 @@
-# OctoFarm Server Environment Variables
+# Environment Variables
 OctoFarm Server can be configured with environment variables. There's different ways to do this **for each setup**:
 - specify a `.env` file. This works for these setups:
     - NodeJS with `pm2`

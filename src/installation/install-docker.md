@@ -1,13 +1,21 @@
-## Running OctoFarm with docker-compose.yml
+# Docker
 
 Docker is a great tool! Using `docker-compose` is better and `portainer` is most awesome! Please read the following before continuing:
-1) NOTE we assume you are familiar with `docker` and `docker-compose`. These are great tools for isolating your software deployment (+), but it be quite new to some users (-).
-    - We cannot support each custom scenario or setup!
-    - Take good care of checking your device's memory limits, architecture and CPU power (`docker stats` and for example `mem_limit: 400m` for 400MB limit in docker-compose)
-    - If your device's CPU hits high percentages a lot or memory usage is high, please check your OctoFarm network timeout settings and inspect your OctoPrint/network latencies.
-2) NOTE we provide `octofarm/octofarm:latest`, `octofarm/octofarm:alpine-latest` and `octofarm/octofarm:monolithic-latest`
-    - `latest` and `alpine-latest` require you to run MongoDB or a MongoDB container (see compose below)
-    - `monolithic` does not require a separate MongoDB, but we at OctoFarm personally like MongoDB to be separate (docker = isolation remember?).
+NOTE we assume you are familiar with `docker` and `docker-compose`. These are great tools for isolating your software deployment (+), but it be quite new to some users (-).
+   - We cannot support each custom scenario or setup!
+   - Take good care of checking your device's memory limits, architecture and CPU power (`docker stats` and for example `mem_limit: 400m` for 400MB limit in docker-compose)
+   - If your device's CPU hits high percentages a lot or memory usage is high, please check your OctoFarm network timeout settings and inspect your OctoPrint/network latencies.
+
+## Tags
+
+we provide `octofarm/octofarm:latest`, `octofarm/octofarm:alpine-latest` and `octofarm/octofarm:monolithic-latest`
+- `latest` and `alpine-latest` require you to run MongoDB or a MongoDB container (see compose below)
+- `monolithic` does not require a separate MongoDB, but we at OctoFarm personally like MongoDB to be separate (docker = isolation remember?).
+
+
+## Docker Run
+
+## Docker Compose
 
 ### Docker images 'latest' or ':'alpine-latest' with separate MongoDb
 **Pay good attention that you have to configure your root-user's username and password for MongoDB and that OctoFarm needs it to work!**
@@ -74,8 +82,6 @@ The monolithic image does not require MongoDB externally, but it also has less c
     # SYSTEM:CONTAINER
     - 4000:4000
 ```
-### Directly use Docker without those magic compose files!
-https://octofarm.net/installation (head to the Docker section) is your friend as we covered it there already.
 
 ### Docker or docker-compose for version 2.0 (not released yet!)
 In version 2.0 we will stop using MongoDB and move to a much simpler database called SQLite. This means that you won't have to do anything and you can remove your MongoDB database!
