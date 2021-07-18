@@ -16,9 +16,10 @@ OctoFarm will use the cost plugins settings it detects to base it's own calculat
 ## OctoPrint's Power Control Plugins
 These can all be setup in the Printer Settings plugin. You need to input your printer url and the api endpoint that the plugin has. Currently there are no pre-made settings to choose from but I have found all of the information on the corrosponding plugins github page.
 
-Below are example settings for the OctoFarm power button. This will enable the button on the UI allowing power actions to be sent through OctoPrint to your printers power source.
+Below are example settings for the OctoFarm power button. This will enable the button on the UI allowing power actions to be sent through OctoFarm to your printers power source.
 
-Double check as you may need to fill some extra information in here due to how the API works on those plugins.
+OctoFarm's power button is not limited to these plugins, it just makes a POST request for each one if you supply a command to, and a GET request when no command object is supplied. It should suffice to support most setups / other power plugin's. 
+
 ### [PSU Control](https://github.com/kantlivelong/OctoPrint-PSUControl)
 If the plugin is available on OctoFarms initial scan you will have your setting's from OctoPrint pre-filled. If you need to set this up manually then you can use the image below.
 ![PSU Control settings example](../images/smartplugs/power-psucontrol.png)
