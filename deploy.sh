@@ -17,6 +17,6 @@ git add -A
 git commit -m 'deploy'
 
 # if you are deploying to https://<USERNAME>.github.io
-git push -f git@github.com:octofarm/octofarm.github.io.git gh-pages
+git push -f git@github.com:OctoFarm/OctoFarm-Documentation.git gh-pages
 
 cd -
