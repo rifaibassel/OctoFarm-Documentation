@@ -33,7 +33,7 @@ module.exports = {
   themeConfig: {
     repo: 'https://github.com/OctoFarm/OctoFarm-Documentation',
     editLinks: false,
-    docsDir: '',
+    docsDir: 'src/.vuepress/dist',
     editLinkText: '',
     nextLinks: false,
     prevLinks: false,
@@ -58,10 +58,6 @@ module.exports = {
       {
         text: 'OctoFarm',
         link: 'https://octofarm.net'
-      },
-      {
-        text: 'Github',
-        link: 'https://github.com/OctoFarm/OctoFarm'
       },
     ],
     sidebar: {
