@@ -70,7 +70,7 @@ module.exports = {
       '/api/': generateSideBar("api", "API Usage"),
       '/contributing/': generateSideBar("contributing", "Contributing Guidelines")
     },
-    sidebarDepth: 2
+    sidebarDepth: 2,
   },
 
   /**
