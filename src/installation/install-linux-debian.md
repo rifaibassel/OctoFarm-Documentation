@@ -101,7 +101,14 @@ npm start
 ```
 
 ## 4 Profit!
-- You can double check the OctoFarm service is running by using `pm2 list` from anywhere on your console. If you see ```bashOctoFarm' and 'Running' on the output you should be good to access the web interface. 
+- You can double check the OctoFarm service is running by using `pm2 list` from anywhere on your console. You should see:
+```
+┌─────┬─────────────┬─────────────┬─────────┬─────────┬──────────┬────────┬──────┬───────────┬──────────┬──────────┬──────────┬──────────┐
+│ id  │ name        │ namespace   │ version │ mode    │ pid      │ uptime │ ↺    │ status    │ cpu      │ mem      │ user     │ watching │
+├─────┼─────────────┼─────────────┼─────────┼─────────┼──────────┼────────┼──────┼───────────┼──────────┼──────────┼──────────┼──────────┤
+│ 0   │ OctoFarm    │ default     │ 1.1.14… │ fork    │ 2215     │ 20h    │ 0    │ online    │ 0%       │ 175.8mb  │ ubuntu   │ disabled │
+└─────┴─────────────┴─────────────┴─────────┴─────────┴──────────┴────────┴──────┴───────────┴──────────┴──────────┴──────────┴──────────┘
+```
 - OctoFarm runs on port 4000 by default. So you'll be able to access it in a web browser from:\
 `http://{your systems ip address}:4000`
 
