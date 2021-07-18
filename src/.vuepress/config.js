@@ -82,9 +82,32 @@ module.exports = {
       // The key is the path for the locale to be nested under.
       // As a special case, the default locale can use '/' as its path.
       '/': {
-        lang: 'en-GB', // this will be set as the lang attribute on <html>
-        title: 'OctoFarm Documentation',
-        description: 'OctoFarms official documentation'
+        '/': {
+          // text for the language dropdown
+          selectText: 'Languages',
+          // label for this locale in the language dropdown
+          label: 'English',
+          // Aria Label for locale in the dropdown
+          ariaLabel: 'Languages',
+          // text for the edit-on-github link
+          editLinkText: 'Edit this page on GitHub',
+          // config for Service Worker
+          serviceWorker: {
+            updatePopup: {
+              message: "New content is available.",
+              buttonText: "Refresh"
+            }
+          },
+          // algolia docsearch options for current locale
+          algolia: {},
+          nav: [
+            {text: 'Nested', link: '/nested/', ariaLabel: 'Nested'}
+          ],
+          sidebar: {
+            '/': [/* ... */],
+            '/nested/': [/* ... */]
+          }
+        }
       },
       // '/zh/': {
       //   lang: 'zh-CN',
