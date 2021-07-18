@@ -16,6 +16,17 @@ You can check out the latest development version by replacing `-latest` with `-d
 
 ## Docker Run
 
+You can get up and running quite easily with the command below. It's recommended to use the docker-compose instructions below for a more persistent configuration. 
+
+```sh
+docker run -d --name octofarm -e "MONGO=mongodb://{ mongoip }/octofarm" -p4000:4000 octofarm/octofarm -e "TZ=America/Chicago" -v '{your persistent folder}/OctoFarm/scripts/':/scripts/':'rw' -v '<your persistent folder>/OctoFarm/logs/':'/app/logs/':'rw' -v './OctoFarm/images':'/app/images':rw'
+```
+
+Environment Variables
+
+- MONGO = contains mongodb connection string
+- TZ = local timezone code e.g. "America/Chicago" Database of TimeZone Values Here
+
 ## Docker Compose
 
 ### Docker images 'latest' or ':'alpine-latest' with separate MongoDb
