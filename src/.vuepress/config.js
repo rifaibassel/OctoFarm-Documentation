@@ -8,7 +8,7 @@ module.exports = {
   /**
    * Ref：https://v1.vuepress.vuejs.org/config/#title
    */
-  title: 'Vuepress Docs Boilerplate',
+  title: 'OctoFarms Documentation',
   /**
    * Ref：https://v1.vuepress.vuejs.org/config/#description
    */
@@ -37,7 +37,7 @@ module.exports = {
     editLinkText: '',
     nextLinks: false,
     prevLinks: false,
-    lastUpdated: false,
+    lastUpdated: "Last Updated",
     nav: [
       // {
       //   text: 'API',
@@ -67,6 +67,25 @@ module.exports = {
       '/contributing/': generateSideBar("contributing", "Contributing Guidelines")
     },
     sidebarDepth: 2,
+    /**
+     * Locales configuration for translation support
+     *
+     * ref：https://vuepress.vuejs.org/guide/i18n.html#site-level-i18n-config
+     */
+    locales: {
+      // The key is the path for the locale to be nested under.
+      // As a special case, the default locale can use '/' as its path.
+      '/': {
+        lang: 'en-GB', // this will be set as the lang attribute on <html>
+        title: 'OctoFarm Documentation',
+        description: 'OctoFarms official documentation'
+      },
+      // '/zh/': {
+      //   lang: 'zh-CN',
+      //   title: 'VuePress',
+      //   description: 'Vue 驱动的静态网站生成器'
+      // }
+    }
   },
 
   /**
