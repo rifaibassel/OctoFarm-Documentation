@@ -1,7 +1,7 @@
 ---
 home: true
 heroImage: logo.png
-tagline: OctoFarms official documentation
+tagline: Everything you need to know about OctoFarm
 actionText: Getting Started
 actionLink: /getting-started/
 footer: Made by James Mackay and OctoFarm supporters with ❤️
