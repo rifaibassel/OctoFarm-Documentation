@@ -3,7 +3,7 @@
 ## System Requirements
 First it's best to take a look at OctoFarms system requirements. Make sure you have what's required to get the system up and running. 
 
-[Setting up OctoPrint](/src/getting-started/octofarm-requirements.md) 
+[System Requirements](/src/getting-started/octofarm-requirements.md) 
 
 ## Setting up your OctoPrint instances
 Before OctoFarm can connect to your OctoPrint instances there's a few setup instructions you must follow to allow OctoFarm to secure a connection.

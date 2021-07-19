@@ -1,4 +1,4 @@
-# Service
+# Service Setup
 
 Required to start on system boot and also use internal system functions. (must be whilst OctoFarm is running)
 
