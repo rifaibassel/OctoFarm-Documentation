@@ -10,3 +10,6 @@ There's a few things to check here. Make sure you've followed the OctoPrint and 
 
 ## Commands fail to send to OctoPrint but status updates? 
 This is usually a routing issue. Make sure the client your accessing OctoFarm from can connect to the OctoPrint instances as the commands are currently sent client side.
+
+## Can I install OctoFarm on OctoPi? 
+No, to put it bluntly. Due to MongoDB's 64-bit requirement this is currently not possible nor recommended. OctoFarm has a chance (albeit slim) to interferr with a print by taking CPU away from your OctoPrint instance. This setup is not recommended and not supported in anyway by the team at OctoFarm. 
