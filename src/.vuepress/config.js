@@ -37,42 +37,15 @@ module.exports = {
    * ref：https://v1.vuepress.vuejs.org/theme/default-theme-config.html
    */
   themeConfig: {
-    repo: 'https://github.com/OctoFarm/OctoFarm-Documentation',
-    editLinks: false,
-    docsDir: 'src/.vuepress/dist',
-    editLinkText: '',
+    repo: 'https://github.com/OctoFarm/OctoFarm',
+    docsRepo: 'https://github.com/OctoFarm/OctoFarm-Documentation',
+    docsDir: 'src',
     nextLinks: false,
     prevLinks: false,
-    lastUpdated: "Last Updated",
-    nav: [
-      // {
-      //   text: 'API',
-      //   link: '/api/',
-      // },
-      // {
-      //   text: 'Contributing',
-      //   link: '/contributing/'
-      // },
-      {
-        text: 'Guides',
-        link: '/guides/'
-      },
-      {
-        text: 'Installation',
-        link: '/installation/'
-      },
-      {
-        text: 'OctoFarm',
-        link: 'https://octofarm.net'
-      },
-    ],
-    sidebar: {
-      '/installation/': generateSideBar("installation", "Installation Instructions"),
-      '/guides/': generateSideBar("guides", "Application Guides"),
-      '/api/': generateSideBar("api", "API Usage"),
-      '/contributing/': generateSideBar("contributing", "Contributing Guidelines")
-    },
+    smoothScroll: true,
+    editLinks: true,
     sidebarDepth: 2,
+    logo: '/logo.png',
     /**
      * Locales configuration for translation support
      *
@@ -82,32 +55,58 @@ module.exports = {
       // The key is the path for the locale to be nested under.
       // As a special case, the default locale can use '/' as its path.
       '/': {
-        '/': {
-          // text for the language dropdown
-          selectText: 'Languages',
-          // label for this locale in the language dropdown
-          label: 'English',
-          // Aria Label for locale in the dropdown
-          ariaLabel: 'Languages',
-          // text for the edit-on-github link
-          editLinkText: 'Edit this page on GitHub',
-          // config for Service Worker
-          serviceWorker: {
-            updatePopup: {
-              message: "New content is available.",
-              buttonText: "Refresh"
-            }
-          },
-          // algolia docsearch options for current locale
-          algolia: {},
-          nav: [
-            {text: 'Nested', link: '/nested/', ariaLabel: 'Nested'}
-          ],
-          sidebar: {
-            '/': [/* ... */],
-            '/nested/': [/* ... */]
+        searchPlaceholder: 'Search...',
+        // text for the language dropdown
+        selectText: 'Languages',
+        // label for this locale in the language dropdown
+        label: 'English',
+        // Aria Label for locale in the dropdown
+        ariaLabel: 'Languages',
+        // text for the edit-on-github link
+        editLinkText: 'Edit this page on GitHub',
+        // config for Service Worker
+        serviceWorker: {
+          updatePopup: {
+            message: "New content is available.",
+            buttonText: "Refresh"
           }
-        }
+        },
+        // algolia docsearch options for current locale
+        algolia: {},
+        nav: [
+          // {
+          //   text: 'API',
+          //   link: '/api/',
+          // },
+          // {
+          //   text: 'Contributing',
+          //   link: '/contributing/'
+          // },
+          {
+            text: 'Getting Started',
+            link: '/getting-started/'
+          },
+          {
+            text: 'Guides',
+            link: '/guides/'
+          },
+          {
+            text: 'Installation',
+            link: '/installation/'
+          },
+          {
+            text: 'OctoFarm.net',
+            link: 'https://octofarm.net',
+            target: '_blank'
+          },
+        ],
+        sidebar: {
+          '/getting-started/': generateSideBar("getting-started", "Getting Started"),
+          '/installation/': generateSideBar("installation", "Installation Instructions"),
+          '/guides/': generateSideBar("guides", "Application Guides"),
+          '/api/': generateSideBar("api", "API Usage"),
+          '/contributing/': generateSideBar("contributing", "Contributing Guidelines")
+        },
       },
       // '/zh/': {
       //   lang: 'zh-CN',
