@@ -66,7 +66,7 @@ You should see the system report back as 'active'
 ### 2.3 Install NodeJS and check the version is correct.
 - Install the nodejs application
 ```bash
-sudo apt -y nodejs gcc g++ make
+sudo apt -y install nodejs gcc g++ make
 ```
 - Double check we have the correct version (must be v14+)
 ```bash
@@ -114,3 +114,4 @@ npm start
 
 ## Additional
 OctoFarms service is fully controllable from the cli, and you can also action restarts from the UI. It is not setup as persistent as default to do so please check the following documentation:
+https://docs.octofarm.net/installation/setup-service.html
