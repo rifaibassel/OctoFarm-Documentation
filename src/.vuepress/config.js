@@ -130,7 +130,8 @@ module.exports = {
         serviceWorker: true,
         updatePopup: true
       }
-    ]
+    ],
+    ['plausible', { domain: 'docs.octofarm.net' }]
   ]
 }
 
