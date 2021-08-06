@@ -114,3 +114,4 @@ npm start
 
 ## Additional
 OctoFarms service is fully controllable from the cli, and you can also action restarts from the UI. It is not setup as persistent as default to do so please check the following documentation:[Service Setup](/installation/setup-service.md)
+[Service Setup](/installation/setup-service.md)

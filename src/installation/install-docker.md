@@ -99,4 +99,4 @@ The monolithic image does not require MongoDB externally, but it also has less c
 In version 2.0 we will stop using MongoDB and move to a much simpler database called SQLite. This means that you won't have to do anything and you can remove your MongoDB database!
 Of course we will provide the tools to hop on to the 2.0 train, when the time comes. The only change is that the `monolithic-latest` will become the same as the `latest` image. Less setup, nice ey?
 
-Enjoy using OctoFarm with docker and do share your big-flex juicy pics on [Our Discord](https://discord.gg/vjabMUn).
+Enjoy using OctoFarm with docker and do share your big-flex juicy pics on [Our Discord](https://discord.octofarm.net).

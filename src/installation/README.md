@@ -4,5 +4,5 @@ Choose your installation instructions from the left sidebar. We have a few suppo
 
 ### System Requirements
 
-If you haven't already please check out OctoFarms [System Requirements](/src/getting-started/octofarm-requirements.md) before continuing.
+If you haven't already please check out OctoFarms [System Requirements](/getting-started/octofarm-requirements.md) before continuing.
 
