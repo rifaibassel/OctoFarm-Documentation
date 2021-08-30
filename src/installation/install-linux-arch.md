@@ -22,7 +22,7 @@ node --version`
 
 ## 4 MongoDB
 
-This is somewhat of a pain on Arch. Because of licensing concerns it is not provided as a package from the official repository so we will need to install the binary from AUR. You may use a AUR helper (such as yay) if you prefer. It is also possible to leverage something like Atlas MongoDB but that is beyond the scope of this documentation. This being Linux (and especially a variant like Arch) there are a probably a couple dozen ways to skin this cat including but not limited to containers (Docker, Podman, etc) Flatpaks, appimages, etc.
+This is somewhat of a pain on Arch. Because of licensing concerns it is not provided as a package from the official repository so we will need to install the binary from AUR. You may use a AUR helper (such as yay) if you prefer. It is also possible to leverage something like Atlas MongoDB but that is beyond the scope of this documentation. This being Linux (and especially a variant like Arch) there are a probably a couple dozen ways to skin this cat including but not limited to containers (Docker, Podman, etc) Flatpaks, appimages, etc. Just keep in mind that there is no accounting for what is in a binary blob; we have no way of telling what options it is compiled with, and what the pkgbuild looked like. The problem is that compiling MongoDB from source takes a stunning ~200GB of disk space. Understand what you are doing and the origin of the code if you are going to install a binary from a non-official repository and take precautions. TL:DR use at your own risk.
 
 ### 4.1 Install necessary tools
 
