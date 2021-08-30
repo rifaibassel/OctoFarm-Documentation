@@ -1,6 +1,6 @@
 # Linux (Arch)
 
-Verfied working as of Aug/30th 2021. Arch is a rolling release so this may be subject to change.
+Verfied working as of Aug/30th 2021. Arch is a rolling release so this may be subject to sudden change.
 
 ## 1 Update your repositories and packages fully:
 
