@@ -45,7 +45,7 @@ sudo systemctl enable mongodb --now
 sudo systemctl status mongodb
 ```
     
-## 5 Install npm pm2:
+## 5 Install pm2:
 
 ```bash
 sudo npm install pm2 -g
