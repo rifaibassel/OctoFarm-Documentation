@@ -22,7 +22,7 @@ node --version`
 
 ## 4 MongoDB
 
-This is somewhat of a pain on Arch. Because of licensing concerns it is not provided as a package from the official repository so we will need to install the binary from AUR. You may use a AUR helper (such as yay) if you prefer. It is also possible to leverage something like Atlas MongoDB but that is beyond the scope of this documentation.
+This is somewhat of a pain on Arch. Because of licensing concerns it is not provided as a package from the official repository so we will need to install the binary from AUR. You may use a AUR helper (such as yay) if you prefer. It is also possible to leverage something like Atlas MongoDB but that is beyond the scope of this documentation. This being Linux (and especially a variant like Arch) there are a probably a couple dozen ways to skin this cat including but not limited to containers (Docker, Podman, etc) Flatpaks, appimages, etc.
 
 ### 4.1 Install necessary tools
 
