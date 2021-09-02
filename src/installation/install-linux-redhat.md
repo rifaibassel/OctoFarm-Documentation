@@ -1,4 +1,4 @@
-# Linux (OpenSUSE)
+# Linux (RedHat)
 
 This was verified working on Fedora 34, Alma Linux and Rocky Linux as of 1/Sep/2021. Should be fine with other Red Hat variants as well but not independantly verified.
 
