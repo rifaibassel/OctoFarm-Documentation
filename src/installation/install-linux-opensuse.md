@@ -11,7 +11,7 @@ sudo zypper dup
 ## 2 Install necessary dependencies:
 
 ```bash    
-sudo zypper install nodejs gcc make git`
+sudo zypper install nodejs gcc make git ca-certificates{,-cacert,-mozilla}
 ```
 
 ## 3 Verify correct Nodejs version (needs to be 14+)
