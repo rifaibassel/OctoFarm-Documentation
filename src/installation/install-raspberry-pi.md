@@ -2,7 +2,9 @@
 OctoFarm comes wrapped in a nice pre-built image for the RaspberryPi running on Ubuntu 64-bit. Similar to OctoPrint's OctoPi, FarmPi comes with all you need to get up and running with OctoFarm. You have the option to use FarmPi, or manually install OctoFarm itself. Both instructions are below.
 FarmPi was created by [Maurice Kevenaar](https://github.com/mkevenaar) and all credit for it's creation goes to him. You can find the [FarmPi Github](https://github.com/mkevenaar/FarmPi). 
 
-::: warning This image does NOT include OctoPrint... You will need that on another device / installed seperately somewhere... :::
+::: warning 
+This image does NOT include OctoPrint... You will need that on another device / installed seperately somewhere... 
+:::
 
 You can find more information about FarmPi here: [FarmPi Documentation](https://farmpi.kevenaar.name/)
 
