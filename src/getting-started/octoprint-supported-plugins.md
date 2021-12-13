@@ -104,7 +104,7 @@ OctoFarm will not work without the plugins database setting up. Do not use this 
 This will clear out any spools currently in OctoFarms database and replace them with those on your Filament Manager Plugin instance. 
 :::
 ### Setup in OctoFarm
-If you haven't already, then it's recommended to follow the filament managers database setup guide that has been created specifically for OctoFarm setups. You can find that here: [Filament Manager Plugin Database Setup](/src/guides/filament-manager-installation.md).
+If you haven't already, then it's recommended to follow the filament managers database setup guide that has been created specifically for OctoFarm setups. You can find that here: [Filament Manager Plugin Database Setup](/guides/filament-manager-installation.md).
 
 Once that is setup then please navigate to the section showing below: System -> Server -> Filament Manager. 
 
