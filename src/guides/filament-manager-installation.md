@@ -27,7 +27,7 @@ sudo systemctl start postgresql.service
 sudo systemctl enable postgresql.service
 ```
 
-### Setup the database
+### Setup the database (Same on both systems)
 
 Switch to the postgres user
 ```bash
