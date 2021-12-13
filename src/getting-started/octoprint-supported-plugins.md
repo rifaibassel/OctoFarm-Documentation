@@ -15,6 +15,10 @@ OctoFarm will use the cost plugins settings it detects to base it's own calculat
 
 ## [Display Layer Progress](https://github.com/OllisGit/OctoPrint-DisplayLayerProgress)
 OctoFarm will detect the plugins' availability on the first sync of your OctoPrint instance. Everything else is automatic once OctoFarm receives the data from the plugin.
+::: warning
+Please note: This has only been tested with the default "Printer Display" settings. The information is parsed from that string that is provided, if you have issues then either set it back to ```[progress]% L=[current_layer]/[total_layers]``` or open an issue on github.
+:::
+
 
 ## OctoPrint's Power Control Plugins
 These can all be setup in the Printer Settings plugin. You need to input your printer url and the api endpoint that the plugin has. Currently there are no pre-made settings to choose from but I have found all of the information on the corrosponding plugins github page.
