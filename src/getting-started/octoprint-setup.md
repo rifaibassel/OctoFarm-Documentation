@@ -2,7 +2,9 @@
 There are a few pre-requisits for OctoPrint to allow OctoFarm to establish a reliable connection to OctoPrint. Please setup the below on each instance you want to add to your farm. 
 
 ::: warning
-Currently OctoFarm (to save time on larger farms) attempts to guess which user to use. If you have multiple admin users in OctoPrint, OctoFarm, could incorrectly guess which one you use. For now it is best to just have 1 user on your OctoPrint instances until we look into allowing OctoFarm users to select their preferred OctoPrint user.
+Pre-V1.2 - Currently OctoFarm (to save time on larger farms) attempts to guess which user to use. If you have multiple admin users in OctoPrint, OctoFarm, could incorrectly guess which one you use. For now it is best to just have 1 user on your OctoPrint instances until we look into allowing OctoFarm users to select their preferred OctoPrint user.
+
+Post-V1.2 - To save time when adding printers to OctoFarm it will attempt to guess the user you want to use on it with OctoPrints connection. This guess isn't amazingly smart, it just expects a single user administrator setup. If you've got multiple users on your system, it is currently recommended to create a new administrator called octofarm or OctoFarm if you like camelcase. OctoFarm will detect this user name and default back to it. Failing this, OctoFarm will not be able to connect due to the mis-match in authentication keys and user name. You may open up the settings for your printer and change the user there in the Printer Manager screen. 
 :::
 
 ## Setup the correct API Key
