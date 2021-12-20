@@ -53,12 +53,9 @@ services:
       MONGO_INITDB_ROOT_USERNAME: MONGO_ROOTUSER_HERE
       MONGO_INITDB_ROOT_PASSWORD: MONGO_PASSWORD_HERE
       MONGO_INITDB_DATABASE: octofarm
-    ports:
-     # HOST:CONTAINER
-    - 27017:27017
     volumes:
     # Local volume (change to mongodb-data for a named volume folder)
-    - ./mongodb-data:/data/db
+      - ./mongodb-data:/data/db
     restart: unless_stopped
 
   octofarm:
@@ -67,15 +64,17 @@ services:
     image: octofarm/octofarm:latest
     restart: always
     mem_limit: 400m # Feel free to adjust! 400 MB is quite high and a safety limit.
+    links:
+      - mongodb
     ports:
-    - 4000:4000 # port of SYSTEM : port of CONTAINER
+      - 4000:4000 # port of SYSTEM : port of CONTAINER
     environment:
-    - MONGO=mongodb://MONGO_ROOTUSER_HERE:MONGO_PASSWORD_HERE@mongodb:27017/octofarm?authSource=admin
+      - MONGO=mongodb://MONGO_ROOTUSER_HERE:MONGO_PASSWORD_HERE@mongodb:27017/octofarm?authSource=admin
     volumes:
     # Volumes as local relative folders (validate with 'docker-compose config')
-    - ./OctoFarm/logs:/app/logs
-    - ./OctoFarm/scripts:/app/scripts
-    - ./OctoFarm/images:/app/images
+      - ./OctoFarm/logs:/app/logs
+      - ./OctoFarm/scripts:/app/scripts
+      - ./OctoFarm/images:/app/images
 ```
 ### Docker image 'monolithic-latest'
 The monolithic image does not require MongoDB externally, but it also has less control over MongoDB setup:
@@ -86,13 +85,13 @@ The monolithic image does not require MongoDB externally, but it also has less c
     restart: always
     volumes:
     # Local volumes, can be made named
-    - ./OctoFarm/logs:/app/logs   
-    - ./OctoFarm/scripts:/app/scripts
-    - ./OctoFarm/images:/app/images
-    - ./mongodb-data:/data/db 
+      - ./OctoFarm/logs:/app/logs   
+      - ./OctoFarm/scripts:/app/scripts
+      - ./OctoFarm/images:/app/images
+      - ./mongodb-data:/data/db 
     ports:
     # SYSTEM:CONTAINER
-    - 4000:4000
+      - 4000:4000
 ```
 
 ### Docker or docker-compose for version 2.0 (not released yet!)
