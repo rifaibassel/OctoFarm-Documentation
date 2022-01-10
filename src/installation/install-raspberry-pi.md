@@ -71,4 +71,4 @@ Default ubuntu credentials are:
  - Password: ubuntu
 :::
 
-5. Continue on with the [Linux (Ubuntu)](/src/installation/install-linux-ubuntu.md) setup.
+5. Continue on with the [Linux (Ubuntu)](/installation/install-linux-ubuntu.md) setup.
