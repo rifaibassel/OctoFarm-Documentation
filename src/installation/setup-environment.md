@@ -3,8 +3,6 @@ OctoFarm Server can be configured with environment variables. There's different 
 - specify a `.env` file. This works for these setups:
     - NodeJS with `pm2`
     - NodeJS with `nodemon`
-    - (FUTURE) windows setup (not available yet)
-    - (FUTURE) Unix setup (not available yet)
 - docker - specify each variable separately, this can become tedious:
     - docker: using the `-e VARIABLE=value` command repeatedly
 - docker - all at once
@@ -22,6 +20,8 @@ The following variables are read and used by OctoFarm at startup. Always restart
 > OCTOFARM_PORT=4000
 - OCTOFARM_SITE_TITLE **Custom site title for OctoFarm**
 > OCTOFARM_SITE_TITLE=OctoFarm
+- LOG_LEVEL **Custom logging level, supports info, debug, silly
+> LOG_LEVEL=info
 
 ## The `.env` file
 A very simple text file with a variable per line. The following `.env` is often already enough to make sure OctoFarm works as you like:
@@ -62,8 +62,3 @@ services:
       MONGO=mongodb://127.0.0.1:27017/octofarm
       OCTOFARM_PORT=4000
 ```
-### Docker
-Please add each environment variable in a file named `.env` in the folder where you run you docker command.
-If you don't like a file, `-e VARIABLE_NAME=value` is a possible fix, although it is quite hard to maintain it like that.
-
-We advise if you find this too hard, to consider using [docker-compose](#docker-compose)
