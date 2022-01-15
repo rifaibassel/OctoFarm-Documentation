@@ -56,13 +56,13 @@ services:
     volumes:
     # Local volume (change to mongodb-data for a named volume folder)
       - ./mongodb-data:/data/db
-    restart: unless_stopped
+    restart: unless-stopped
 
   octofarm:
     container_name: octofarm
     # choose octofarm/octofarm:latest or octofarm/octofarm:alpine-latest    
     image: octofarm/octofarm:latest
-    restart: always
+    restart: unless-stopped
     mem_limit: 400m # Feel free to adjust! 400 MB is quite high and a safety limit.
     links:
       - mongodb
@@ -82,7 +82,7 @@ The monolithic image does not require MongoDB externally, but it also has less c
  octofarm-monolithic:
     container_name: octofarm-monolithic
     image: octofarm/octofarm:monolithic-latest
-    restart: always
+    restart: unless-stopped
     volumes:
     # Local volumes, can be made named
       - ./OctoFarm/logs:/app/logs   
@@ -93,9 +93,5 @@ The monolithic image does not require MongoDB externally, but it also has less c
     # SYSTEM:CONTAINER
       - 4000:4000
 ```
-
-### Docker or docker-compose for version 2.0 (not released yet!)
-In version 2.0 we will stop using MongoDB and move to a much simpler database called SQLite. This means that you won't have to do anything and you can remove your MongoDB database!
-Of course we will provide the tools to hop on to the 2.0 train, when the time comes. The only change is that the `monolithic-latest` will become the same as the `latest` image. Less setup, nice ey?
 
 Enjoy using OctoFarm with docker and do share your big-flex juicy pics on [Our Discord](https://discord.octofarm.net).
