@@ -1,15 +1,25 @@
 # Trying out alpha versions
 
-OctoFarm has now automated it's development (alpha) versions, these are not to be confused with RC (Release Candidates), as they are generally the lead up to the release of an RC. These will most certainly be buggy!
+OctoFarm has now automated its development (alpha) versions, these are not to be confused with RC (Release Candidates), as they are generally the lead up to the release of an RC.
 
 It's always helpful for anyone to try out a development version and below are some instructions how to go about it. 
+
+::: warning
+Here be many bugs!
+
+Also expects you followed original install instructions!
+:::
+
+::: tip
+Windows: The commands below are system agnostic, you'll need to get into your OctoFarm folder, where ever you installed it, to run the commands. Easiest way is to open the "File Explorer" and type `cmd` into the address bar. 
+:::
 
 ## Setting up development version for pm2. 
 
 ### 1. Backup, or create a new database. 
 Development versions often have database migrations preventing easily switching between the two versions on the same database. It's much safer and easier (better than aspirin) to create a backup of your current database, or just setup a new one. 
 
-The easiest way to create a new database is open your `.env` file and append a random digit on the end of your `MONGO`
+The easiest way to create a new database is open your `.env` file and append a random digit on the end of your `MONGO` with your favorite text editor!
 e.g. MONGO=mongodb://127.0.0.1:27017/octofarm2
 
 When you reboot OctoFarm it will setup a fresh database for you. Just remember to switch back / run multiple versions of OctoFarm along side each other. 
@@ -21,7 +31,7 @@ If you want, copy your OctoFarm folder to a new folder. e.g. OctoFarm-DEV.
 
 `cd / DIR` into the directory. 
 
-Run the commands `git fetch && git checkout development && git pull`
+Run the commands `git fetch origin development && git checkout development && git pull`
 
 This will fetch the latest data from the github repository for you. 
 
@@ -54,9 +64,19 @@ There is already a development tag for docker builds and these are updated whene
 ## Reporting and issue! 
 I've found an issue, how should I report it? 
 
-The easiest way is to just create a discussion on github or pop along to the development channel on discord. 
+The easiest way is to just create an issue on github or pop along to the development channel on discord. 
 
-Alternatively fire and email off to info@notexpectedyet.com. 
+[Github Issues](https://github.com/OctoFarm/OctoFarm/issues)
+
+Alternatively fire and email off to info@notexpectedyet.com but with a github issue you will be notified when the fix hits the development branch.
+
+::: warning
+Please go to System -> Logs and press the "House Keeping" button. This will clear out logs older than 5 days so I'm not inundated with stuff from older versions.
+
+The press the "Generate Log Dump" button and upload the "octofarm_dump*.zip" to the issues. Issues without this will be asked to produce it anyway.
+
+This is because there may be other bugs you and I are not aware of. This gives me a decent chance to spot these!
+:::
 
 ::: danger
 If you P.M. me and I don't answer, I haven't had coffee or steak and would rather you didn't...
