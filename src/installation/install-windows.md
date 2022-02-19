@@ -1,94 +1,67 @@
-# Linux (Ubuntu)
+# Windows (10/11)
+
+::: warning
+I actively develop on Windows 10 so that will always be tested. Windows 11 should be fine but I do not personally test these version! 8.1 might even work, depends if V14 of Nodejs still supports it.
+:::
+
+::: danger
+There is currently a bug causing extreme slow down on a windows install. 
+
+Until V1.2 is released you'll either have to use the latest RC versions or an alpha if you like a risk.
+
+RC Setup documentation is coming soon!
+
+[Alpha Setup Documentation](/installation/setup-service.md)
+:::
 
 ## 1 Prepare your system
 First we need to prep the system for the required applications used to run OctoFarm.
 
-### 1.1 Setup MongoDB's repository
-- Add MongoDB's Repository Key\
-```bash
-wget -qO - https://www.mongodb.org/static/pgp/server-4.4.asc | sudo apt-key add
-```
-- Add the MongoDB Repository (Choose by your current ubuntu version)
-20.04:
-```bash
-echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/4.4 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-4.4.list
-```
-18.08:
-```bash
-echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu bionic/mongodb-org/4.4 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-4.4.list
-```
-16.04:
-```bash
-echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/4.4 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-4.4.list
-```
-### 1.2 Setup NodeJS LTS v14 repository
+### 1.1 Download and Install the pre-requisites
+- Download and Install the latest version of git
 
-- Run the node repository setup
-```bash
-curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
-```
+[Git Downloads](https://git-scm.com/download/win)
 
-### 1.3 Update apt with the new repository's
-- Run the apt upgrade command
-```bash
-sudo apt-get update
-```
+- Download and Install Version V4.x of MongoDB (V5.X is not supported at this time)
+
+[MongoDB Community Downloads](https://www.mongodb.com/try/download/community)
+
+- Download and install the latest V14 LTS NodeJS
+
+[NodeJS Downloads](https://nodejs.org/download/release/v14.19.0/)
 
 ## 2. Install OctoFarm's requirements
 If you've successfully run through all of the system prep for the repositories then we can continue to install the applications from them.
 
-### 2.1 Install Git
-- Install the git application
-```bash
-sudo apt install git
-```
-
-### 2.2 Install MongoDB and check the service is running
-- Install the mongodb application
-```bash
-sudo apt install mongodb-org
-```
-- Enable the mongodb service
-```bash
-sudo systemctl enable mongod
-```
-- Start the mongodb service
-```bash
-sudo systemctl start mongod
-```
-- Check the service has actually started
-```bash
-sudo systemctl status mongod
-```
-You should see the system report back as 'active'
-
-### 2.3 Install NodeJS and check the version is correct.
-- Install the nodejs application
-```bash
-sudo apt -y install nodejs gcc g++ make
-```
-- Double check we have the correct version (must be v14+)
-```bash
-node --version
-```
-Example output: `v14.16.1`
-
-### 2.4 Install pm2 (Service Manager)
+### 2.1 Install pm2 (Service Manager)
 - OctoFarm uses a process manager called 'pm2'. Install it globally with the below command. OctoFarm's internal processes require this manager to action some internal commands like "Restart" and "Update".
+
+- Open up "CMD" or "PowerShell" and run the following command.
 ```
-sudo npm install pm2 -g
+npm install pm2 -g
 ```
 
+![](../images/windows-install/pm2-install.png)
 ## 3. Download and Install OctoFarm
 After all that we can finally download OctoFarm from the latest release and start the service running.
+::: tip
+OctoFarm doesn't care about the location you install it. For brevity below I will use `C:/`
+:::
+### 3.1 Open up CMD in the location you'd like to install OctoFarm too.
 
-### 3.1 Download OctoFarm
-- We use git here to grab the latest master version of the application.
+- Open up "Windows Explorer"
+- Go to your "C:/" drive
+- In Exporers address bar type in `cmd` and press enter.
+
+![](../images/windows-install/open-c.png)
+
+### 3.2 Git clone the repository 
 ```bash
 git clone --depth 1 https://github.com/OctoFarm/OctoFarm.git
 ```
+![](../images/windows-install/clone-of.png)
 
-### 3.2 Change into the new OctoFarm directory and start the service
+### 3.3 Change into the new OctoFarm directory and start the service
 - OctoFarm will have downloaded to your current directory, we now need to enter that folder and start it's service.
 ```bash
 cd OctoFarm/
@@ -98,6 +71,7 @@ cd OctoFarm/
 ```bash
 npm start
 ```
+![](../images/windows-install/start-octofarm.png)
 
 ## 4 Profit!
 - You can double check the OctoFarm service is running by using `pm2 list` from anywhere on your console. You should see:
@@ -105,7 +79,7 @@ npm start
 ┌─────┬─────────────┬─────────────┬─────────┬─────────┬──────────┬────────┬──────┬───────────┬──────────┬──────────┬──────────┬──────────┐
 │ id  │ name        │ namespace   │ version │ mode    │ pid      │ uptime │ ↺    │ status    │ cpu      │ mem      │ user     │ watching │
 ├─────┼─────────────┼─────────────┼─────────┼─────────┼──────────┼────────┼──────┼───────────┼──────────┼──────────┼──────────┼──────────┤
-│ 0   │ OctoFarm    │ default     │ 1.1.14… │ fork    │ 2215     │ 20h    │ 0    │ online    │ 0%       │ 175.8mb  │ ubuntu   │ disabled │
+│ 0   │ OctoFarm    │ default     │ 1.1.13… │ fork    │ 6212     │ 88s    │ 0    │ online    │ 0%       │ 112.4mb  │ James    │ disabled │
 └─────┴─────────────┴─────────────┴─────────┴─────────┴──────────┴────────┴──────┴───────────┴──────────┴──────────┴──────────┴──────────┘
 ```
 
@@ -113,5 +87,5 @@ npm start
   `http://{your systems ip address}:4000`
 
 ## Additional
-OctoFarms service is fully controllable from the cli, and you can also action restarts from the UI. It is not setup as persistent as default to do so please check the following documentation:
+OctoFarms service is fully controllable from the cli, and you can also action restarts from the UI. It is not setup as persistent as default to do so please check the following documentation: 
 [Service Setup](/installation/setup-service.md)
