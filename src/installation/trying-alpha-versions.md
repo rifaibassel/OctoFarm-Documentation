@@ -31,7 +31,7 @@ If you want, copy your OctoFarm folder to a new folder. e.g. OctoFarm-DEV.
 
 `cd / DIR` into the directory. 
 
-Run the commands `git fetch && git checkout development && git pull`
+Run the commands `git fetch origin development && git checkout development && git pull`
 
 This will fetch the latest data from the github repository for you. 
 
