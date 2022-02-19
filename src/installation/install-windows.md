@@ -1,7 +1,9 @@
 # Windows (10/11)
 
 ::: warning
-I actively develop on Windows 10 so that will always be tested. Windows 11 should be fine but I do not personally test these version! 8.1 might even work, depends if V14 of Nodejs still supports it.
+I actively develop on Windows 10 so that will always be tested. Windows 11 should be fine but I do not personally test these version! 8.1 might even work.
+
+Windows 7 was EOL a while ago, and NodeJS dropped support for it, so it's impossible for me to support that too.
 :::
 
 ::: danger
