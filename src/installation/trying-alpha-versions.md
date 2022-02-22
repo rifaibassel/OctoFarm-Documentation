@@ -66,6 +66,8 @@ I've found an issue, how should I report it?
 
 The easiest way is to just create an issue on github or pop along to the development channel on discord. 
 
+On github, you can use the labels to filter items that have been reported for the development branch with the "branch: development" label. Check to see if your issue has already been reported. If it's already there, it would great if you added your log dump to that list. 
+
 [Github Issues](https://github.com/OctoFarm/OctoFarm/issues)
 
 Alternatively fire and email off to info@notexpectedyet.com but with a github issue you will be notified when the fix hits the development branch.
