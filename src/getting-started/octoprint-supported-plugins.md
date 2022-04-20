@@ -8,17 +8,16 @@ OctoFarm is trying it's hardest not to actually support individual plugins. This
 Works as is, nothing is needed to make this work. OctoFarm will pick up the information when it does it's re-scan after uploading a file or on scanning the file list on printer add.
 
 ## [SlicerThumbnails](https://github.com/jneilliii/OctoPrint-PrusaSlicerThumbnails)
-Works as is, nothing is needed to make this work. OctoFarm will pick up the information when it scans your files.
+Works as is, nothing is needed to make this work. OctoFarm will pick up the information when it scans your files. Uploaded files are now automatically updated with the thumbnail information after they are created on OctoPrints side. 
 
 ## [Cost Estimation](https://github.com/OllisGit/OctoPrint-CostEstimation)
 OctoFarm will use the cost plugins settings it detects to base it's own calculations on for cost within History and other places. OctoFarm replicates the calculations made by the plugin so nothing else is required for setup. You can edit OctoFarm's values within your printers settings.
 
 ## [Display Layer Progress](https://github.com/OllisGit/OctoPrint-DisplayLayerProgress)
-OctoFarm will detect the plugins' availability on the first sync of your OctoPrint instance. Everything else is automatic once OctoFarm receives the data from the plugin.
-::: warning
-Please note: This has only been tested with the default "Printer Display" settings. The information is parsed from that string that is provided, if you have issues then either set it back to ```[progress]% L=[current_layer]/[total_layers]``` or open an issue on github.
-:::
+OctoFarm will detect the plugins' availability on the first sync of your OctoPrint instance. Everything else is automatic once OctoFarm receives the data from the plugin. The plugin information will be available on the views in a cut down version and also on the printers job information panel.
 
+## [Resource Monitor](https://github.com/Renaud11232/OctoPrint-Resource-Monitor)
+Automatically detected by OctoPrint and displayed within Printer Manager for the plugins latest values. V1.2.x+ these values will be clickable and a history will be generated. 
 
 ## OctoPrint's Power Control Plugins
 These can all be setup in the Printer Settings plugin. You need to input your printer url and the api endpoint that the plugin has. Currently there are no pre-made settings to choose from but I have found all of the information on the corrosponding plugins github page.
