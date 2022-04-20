@@ -5,7 +5,7 @@ There are a few OctoPrint plugins which are supported natively within OctoFarm.
 OctoFarm is trying it's hardest not to actually support individual plugins. This method is time-consuming for OctoFarms development and also keeping the plugins supported as their development is largely out of our control. We would much rather replicate a plugin where possible within OctoFarm's system itself. That been said it's not always possibly to do that and sometimes a plugin is a much better place to grab the information from. You are advised to drop a discussion in on the main repository if you'd like to request support, but this is not a promise. 
 
 ## [PrintTimeGenius](https://github.com/eyal0/OctoPrint-PrintTimeGenius)
-Works as is, nothing is needed to make this work. OctoFarm will pick up the information when it does it's re-scan after uploading a file or on scanning the file list on printer add.
+Works as is, nothing is needed to make this work. OctoFarm will pick up the information when it does it's re-scan after uploading a file or on scanning the file list on printer add. This is also captured before the start of a print incase the file scan misses it for whatever reason. You will also be able to see an accuracy for the calculation displayed in the History view panels. 
 
 ## [SlicerThumbnails](https://github.com/jneilliii/OctoPrint-PrusaSlicerThumbnails)
 Works as is, nothing is needed to make this work. OctoFarm will pick up the information when it scans your files. Uploaded files are now automatically updated with the thumbnail information after they are created on OctoPrints side. 
