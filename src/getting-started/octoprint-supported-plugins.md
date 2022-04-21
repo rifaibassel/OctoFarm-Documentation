@@ -20,7 +20,10 @@ OctoFarm will use the cost plugins settings it detects to base it's own calculat
 OctoFarm will detect the plugins' availability on the first sync of your OctoPrint instance. Everything else is automatic once OctoFarm receives the data from the plugin. The plugin information will be available on the views in a cut down version and also on the printers job information panel.
 
 ## [Resource Monitor](https://github.com/Renaud11232/OctoPrint-Resource-Monitor)
-Automatically detected by OctoPrint and displayed within Printer Manager for the plugins latest values. V1.2.x+ these values will be clickable and a history will be generated. 
+Automatically detected by OctoFarm and displayed within Printer Manager for the plugins latest values. V1.2.x+ these values will be clickable and a history will be generated. 
+
+## [OctoKlipper](https://github.com/thelastWallE/OctoprintKlipperPlugin)
+Automatically detected by OctoFarm. Currently grabs and adds status output from Klipper to the printer manager's ticker and also updates the printers firmware version with current Klipper version number. 
 
 ## OctoPrint's Power Control Plugins
 These can all be setup in the Printer Settings plugin. You need to input your printer url and the api endpoint that the plugin has. Currently there are no pre-made settings to choose from but I have found all of the information on the corrosponding plugins github page.
