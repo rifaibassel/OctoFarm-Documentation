@@ -1,6 +1,6 @@
 {
   "name": "octofarm-documentation",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "OctoFarms official documentation",
   "main": "index.js",
   "authors": {

@@ -53,29 +53,28 @@ services:
       MONGO_INITDB_ROOT_USERNAME: MONGO_ROOTUSER_HERE
       MONGO_INITDB_ROOT_PASSWORD: MONGO_PASSWORD_HERE
       MONGO_INITDB_DATABASE: octofarm
-    ports:
-     # HOST:CONTAINER
-    - 27017:27017
     volumes:
     # Local volume (change to mongodb-data for a named volume folder)
-    - ./mongodb-data:/data/db
-    restart: unless_stopped
+      - ./mongodb-data:/data/db
+    restart: unless-stopped
 
   octofarm:
     container_name: octofarm
     # choose octofarm/octofarm:latest or octofarm/octofarm:alpine-latest    
     image: octofarm/octofarm:latest
-    restart: always
+    restart: unless-stopped
     mem_limit: 400m # Feel free to adjust! 400 MB is quite high and a safety limit.
+    links:
+      - mongodb
     ports:
-    - 4000:4000 # port of SYSTEM : port of CONTAINER
+      - 4000:4000 # port of SYSTEM : port of CONTAINER
     environment:
-    - MONGO=mongodb://MONGO_ROOTUSER_HERE:MONGO_PASSWORD_HERE@mongodb:27017/octofarm?authSource=admin
+      - MONGO=mongodb://MONGO_ROOTUSER_HERE:MONGO_PASSWORD_HERE@mongodb:27017/octofarm?authSource=admin
     volumes:
     # Volumes as local relative folders (validate with 'docker-compose config')
-    - ./OctoFarm/logs:/app/logs
-    - ./OctoFarm/scripts:/app/scripts
-    - ./OctoFarm/images:/app/images
+      - ./OctoFarm/logs:/app/logs
+      - ./OctoFarm/scripts:/app/scripts
+      - ./OctoFarm/images:/app/images
 ```
 ### Docker image 'monolithic-latest'
 The monolithic image does not require MongoDB externally, but it also has less control over MongoDB setup:
@@ -83,20 +82,16 @@ The monolithic image does not require MongoDB externally, but it also has less c
  octofarm-monolithic:
     container_name: octofarm-monolithic
     image: octofarm/octofarm:monolithic-latest
-    restart: always
+    restart: unless-stopped
     volumes:
     # Local volumes, can be made named
-    - ./OctoFarm/logs:/app/logs   
-    - ./OctoFarm/scripts:/app/scripts
-    - ./OctoFarm/images:/app/images
-    - ./mongodb-data:/data/db 
+      - ./OctoFarm/logs:/app/logs   
+      - ./OctoFarm/scripts:/app/scripts
+      - ./OctoFarm/images:/app/images
+      - ./mongodb-data:/data/db 
     ports:
     # SYSTEM:CONTAINER
-    - 4000:4000
+      - 4000:4000
 ```
-
-### Docker or docker-compose for version 2.0 (not released yet!)
-In version 2.0 we will stop using MongoDB and move to a much simpler database called SQLite. This means that you won't have to do anything and you can remove your MongoDB database!
-Of course we will provide the tools to hop on to the 2.0 train, when the time comes. The only change is that the `monolithic-latest` will become the same as the `latest` image. Less setup, nice ey?
 
 Enjoy using OctoFarm with docker and do share your big-flex juicy pics on [Our Discord](https://discord.octofarm.net).
