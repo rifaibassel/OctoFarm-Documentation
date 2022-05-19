@@ -23,7 +23,7 @@ OctoFarm will detect the plugins' availability on the first sync of your OctoPri
 Automatically detected by OctoFarm and displayed within Printer Manager for the plugins latest values. V1.2.x+ these values will be clickable and a history will be generated. 
 
 ## [OctoKlipper](https://github.com/thelastWallE/OctoprintKlipperPlugin)
-Automatically detected by OctoFarm. Currently grabs and adds status output from Klipper to the printer manager's ticker and also updates the printers firmware version with current Klipper version number. 
+Automatically detected by OctoFarm. Currently grabs and adds status output from Klipper to the printer manager's ticker and also updates the printers firmware version with current Klipper version number. A logs history is also captured that can be viewed in Printer Manager's "Manage" dropdown "Logs" section.
 
 ## OctoPrint's Power Control Plugins
 These can all be setup in the Printer Settings plugin. You need to input your printer url and the api endpoint that the plugin has. Currently there are no pre-made settings to choose from but I have found all of the information on the corrosponding plugins github page.
