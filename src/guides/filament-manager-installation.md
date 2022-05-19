@@ -51,18 +51,20 @@ Create the filament manager database
 createdb -O octoprint octoprint_filamentmanager
 ```
 
+Type: `\q` - This will quit the postgres user terminal and return you to the normal terminal
+
 Configure PostgreSQL for local network
 Per default PostgreSQL only accepts connections from localhost. To make the database server available in your network you have to modify two config files.
 ```bash
 sudo nano /etc/postgresql/12/main/postgresql.conf
 ```
 
-In /etc/postgresql/12/main/postgresql.conf change the line with listen_addresses to
+In /etc/postgresql/12/main/postgresql.conf change the line with listen_addresses to, make sure it's uncommented.
 ```bash
 listen_addresses = '*'
 ```
 
-Then append the following line to /etc/postgresql/12/main/pg_hba.conf
+Edit the following pg_hba.conf file with your database and network information.
 ```bash
 sudo nano /etc/postgresql/12/main/pg_hba.conf
 ```
@@ -94,6 +96,17 @@ Python 2 Setups:
 
 The above command is for Raspberry Pi's image "OctoPi". If your using another installation method then the path will vary.
 
+If the above doesn't work then you can try the following -
+Python 3
+```bash
+~/oprint/bin/pip3 install psycopg2-binary
+```
+Python 2
+```bash
+~/oprint/bin/pip install psycopg2-binary
+```
+
+## Setting up OctoPrint and OctoFarm
 :::tip
 The steps below can both now be run from OctoFarm and also in bulk to all of your instances. Printer Manager has an "Install Plugins" option and there is now a new button, in the System settings under "Filament Manager", to enter your database details and update the instances.
 :::
