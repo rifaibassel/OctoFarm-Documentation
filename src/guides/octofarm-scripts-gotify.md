@@ -2,7 +2,7 @@
 
 Setup OctoFarm to use [Gofity](https://github.com/gotify) with alerts (linux)
 
-## Prerequisites
+## Pre-requisites
 - Gotify installed and working and knowledge how to setup a new key.
 - Some linux knowledge
 

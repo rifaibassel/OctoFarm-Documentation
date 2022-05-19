@@ -1,8 +1,10 @@
 # OctoPrint Setup
-There are a few pre-requisits for OctoPrint to allow OctoFarm to establish a reliable connection to OctoPrint. Please setup the below on each instance you want to add to your farm. 
+There are a few pre-requisites for OctoPrint to allow OctoFarm to establish a reliable connection to OctoPrint. Please setup the below on each instance you want to add to your farm. 
 
 ::: warning
-Currently OctoFarm (to save time on larger farms) attempts to guess which user to use. If you have multiple admin users in OctoPrint, OctoFarm, could incorrectly guess which one you use. For now it is best to just have 1 user on your OctoPrint instances until we look into allowing OctoFarm users to select their preferred OctoPrint user.
+Multi-User OctoPrint Setups
+
+Post-V1.2 - To save time when adding printers to OctoFarm will attempt to guess the user you want to use on it with OctoPrints connection. This guess isn't amazingly smart, it just expects a single user administrator setup so will always pick your first created user. If you've got multiple users on your system, it is recommended to create a new administrator called "octofarm" or "OctoFarm" if you like camelcase. OctoFarm will detect this user name and default back to it. Failing this, OctoFarm will not be able to connect due to the mis-match in authentication keys and username. You may open up the settings for your printer and change the user there in the Printer Manager screen. 
 :::
 
 ## Setup the correct API Key
@@ -10,7 +12,7 @@ There are 3 different types of API keys in OctoPrint.
 - User API Key (useful). The user API key works only if the user has the groups **Admins** and **Operator**. This is the first user you make, so make sure to add the roles yourself for it to work for another user (if you must).
 - Application Key (useful). The same as a User key but targeted for specific applications: like OctoFarm. 
 Make sure your user has the groups **ADMINS** AND **OPERATOR** for your user - this is default for only the 1st user!
-- Global API Key. We've had trouble using the Global API Key and it's **will not fully work + should not be used => dont use it**.
+- Global API Key. This key does not work with authorising the websocket connection in OctoPrint anymore. It can't be used, and OctoPrint will be removing it in a future version. 
 
 Quoting OctoPrint's Application Key page:
 > The global API key should best not be used anymore. It's one single key that gives full admin access to your whole OctoPrint instance. **Instead of using it you should create individual Application Keys for your third party clients.** That way they get permissions matching the user account used for key creation and you can also revoke access to one app without having to change the keys for all other apps. It's also recommended to create a user account without admin access and use that for third party clients where possible.
@@ -42,10 +44,7 @@ This the way to get there:
 ![OctoPrint CORS Settings](../images/octoprint/octoprint-cors.png)
 Enable CORS in the OctoPrint settings and restart your OctoPrint instance.
 
-### What happens If CORS is disabled?
-> The OctoFarm website (a.k.a. the client) cannot call OctoPrint. The OctoFarm server can still do it, but that's not how its currently all setup.
-
 ::: danger
-The CORS setting being checked off results in the website of OctoFarm not being able to OctoPrint directly. Thus stuff wil fail.
+OctoFarms client requires CORS to be turned on so that it may communicate with your OctoPrint instances properly. If not enabled commands will fail to be sent to your printers!
 TL;DR enable CORS please ❤️ 
 :::
