@@ -55,6 +55,7 @@ docker exec -it some_mongo bash
 mongorestore /data/db/dump/octofarm/ --db octofarm
 ```
 You should see something like: `2022-05-22T02:03:41.594+0000    # document(s) restored successfully. 0 document(s) failed to restore.`
+
 11. Exit the container and remove the 4.4 image.
 ```bash
 exit
