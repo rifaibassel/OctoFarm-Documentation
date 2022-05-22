@@ -4,9 +4,9 @@
 
 If your still on the older version, you can skip part 1. Just exec into the octofarm container and run the commands from there... the "some_mongo" name will be different though.
 
-1. Start mongodb 3.4 container
+1. Start mongodb 3.2 container
 ```bash
-docker run -v /{replace with your data directory}/:/data/db --name some_mongo -d mongo:3.4
+docker run -v /{replace with your data directory}/:/data/db --name some_mongo -d mongo:3.2
 ```
 2. Go into the containers CLI
 ```bash
