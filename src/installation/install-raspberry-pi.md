@@ -45,7 +45,7 @@ This is a guesstimate, these figures are due to change as feedback is received o
  
 6. More configuration options can be found on Maurice Kevenaar GitHub but you will be able to start adding printers to your FarmPi instance on it's web interface now.
 
-## Manual Installation
+## Manual Installation (FarmPi Recommended)
 1. Ubuntu Download for Raspberry Pi
 
 Download Ubuntu 64-bit 20.04 for your Raspberry Pi Hardware.

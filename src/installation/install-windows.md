@@ -36,6 +36,12 @@ First we need to prep the system for the required applications used to run OctoF
 If you've successfully run through all of the system prep for the repositories then we can continue to install the applications from them.
 
 ### 2.1 Install pm2 (Service Manager)
+- Due to some update dependencies in V1.2+ we need to update our local npm version to the latest.
+```
+sudo npm install npm@latest -g
+```
+
+### 2.2 Install pm2 (Service Manager)
 - OctoFarm uses a process manager called 'pm2'. Install it globally with the below command. OctoFarm's internal processes require this manager to action some internal commands like "Restart" and "Update".
 
 - Open up "CMD" or "PowerShell" and run the following command.

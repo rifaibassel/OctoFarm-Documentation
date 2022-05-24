@@ -74,6 +74,12 @@ node --version
 Example output: `v14.16.1`
 
 ### 2.4 Install pm2 (Service Manager)
+- Due to some update dependencies in V1.2+ we need to update our local npm version to the latest.
+```
+sudo npm install npm@latest -g
+```
+
+### 2.5 Install pm2 (Service Manager)
 - OctoFarm uses a process manager called 'pm2'. Install it globally with the below command. OctoFarm's internal processes require this manager to action some internal commands like "Restart" and "Update".
 ```
 sudo npm install pm2 -g

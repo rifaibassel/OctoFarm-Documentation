@@ -48,8 +48,14 @@ makepkg -si
 sudo systemctl enable mongodb --now
 sudo systemctl status mongodb
 ```
+
+### 5.1 Install pm2 (Service Manager)
+- Due to some update dependencies in V1.2+ we need to update our local npm version to the latest.
+```
+sudo npm install npm@latest -g
+```
     
-## 5 Install pm2:
+## 5.2 Install pm2:
 
 ```bash
 sudo npm install pm2 -g

@@ -34,8 +34,14 @@ sudo zypper install mongodb-org
 sudo systemctl enable mongod --now
 sudo systemctl status mongod
 ```
+
+### 6.1 Install pm2 (Service Manager)
+- Due to some update dependencies in V1.2+ we need to update our local npm version to the latest.
+```
+sudo npm install npm@latest -g
+```
     
-## 6 Install pm2:
+## 6.2 Install pm2:
 
 ```bash
 sudo npm install pm2 -g
