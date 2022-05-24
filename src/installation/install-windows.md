@@ -6,16 +6,6 @@ I actively develop on Windows 10 so that will always be tested. Windows 11 shoul
 Windows 7 was EOL a while ago, and NodeJS dropped support for it, so it's impossible for me to support that too.
 :::
 
-::: danger
-There is currently a bug causing extreme slow down on a windows install. 
-
-Until V1.2 is released you'll either have to use the latest RC versions or an alpha if you like a risk.
-
-RC Setup documentation is coming soon!
-
-[Alpha Setup Documentation](/installation/setup-service.md)
-:::
-
 ## 1 Prepare your system
 First we need to prep the system for the required applications used to run OctoFarm.
 
