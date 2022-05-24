@@ -73,7 +73,7 @@ node --version
 ```
 Example output: `v14.16.1`
 
-### 2.4 Install pm2 (Service Manager)
+### 2.4 Update npm to the latest
 - Due to some update dependencies in V1.2+ we need to update our local npm version to the latest.
 ```
 sudo npm install npm@latest -g

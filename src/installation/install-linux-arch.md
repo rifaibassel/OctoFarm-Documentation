@@ -49,7 +49,7 @@ sudo systemctl enable mongodb --now
 sudo systemctl status mongodb
 ```
 
-### 5.1 Install pm2 (Service Manager)
+### 5.1 Update npm to the latest
 - Due to some update dependencies in V1.2+ we need to update our local npm version to the latest.
 ```
 sudo npm install npm@latest -g

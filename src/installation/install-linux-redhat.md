@@ -63,7 +63,7 @@ sudo systemctl enable mongod --now
 sudo systemctl status mongod
 ```
 
-### 6.1 Install pm2 (Service Manager)
+### 6.1 Update npm to the latest
 - Due to some update dependencies in V1.2+ we need to update our local npm version to the latest.
 ```
 sudo npm install npm@latest -g

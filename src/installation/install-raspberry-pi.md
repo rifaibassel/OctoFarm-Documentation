@@ -21,7 +21,7 @@ This is a guesstimate, these figures are due to change as feedback is received o
 | 4B - 8GB    | 80            |
 
 
-## FarmPi Distribution
+## FarmPi Distribution (Recommended Install)
 
 1. Download the FarmPi image from github or the official FarmPi mirror. Always make sure you're getting the latest version.
 
