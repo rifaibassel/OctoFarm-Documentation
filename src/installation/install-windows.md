@@ -42,12 +42,15 @@ npm install pm2 -g
 ![](../images/windows-install/pm2-install.png)
 ## 3. Download and Install OctoFarm
 After all that we can finally download OctoFarm from the latest release and start the service running.
+
 ::: tip
 OctoFarm doesn't care about the location you install it. For brevity below I will use `C:/`
 :::
+
 ::: warning
 OctoFarm will however require access to whatever folder it's installed on. "Program Files", "Program Files(x86)" and other system folders will not work!
 :::
+
 ### 3.1 Open up CMD in the location you'd like to install OctoFarm too.
 
 - Open up "Windows Explorer"
