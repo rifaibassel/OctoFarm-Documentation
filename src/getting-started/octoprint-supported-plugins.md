@@ -52,13 +52,13 @@ These settings are not pulled on an initial scan due to requiring the Smartplugs
 | Command | URL |
 | --- | --- |
 | Power On | |
-|  ``` { "command":"turnOn", "ip": "<IP of tasmota device in settings>"``` | ```[PrinterURL]/api/plugin/tasmota``` |
+|  ``` { "command":"turnOn", "ip": "<IP of tasmota device in settings>"``` | ```[PrinterURL]/api/plugin/tplinksmartplug``` |
 | Power Off | |
-|  ``` { "command":"turnOff", "ip": "<IP of tasmota device in settings>"``` | ```[PrinterURL]/api/plugin/tasmota``` |
+|  ``` { "command":"turnOff", "ip": "<IP of tasmota device in settings>"``` | ```[PrinterURL]/api/plugin/tplinksmartplug``` |
 | Power Toggle | |
 |  ``` No toggle command available ``` | ```  ``` |
 | Get Status | |
-|  ``` { "command":"checkStatus", "ip": "<IP of tasmota device in settings>" }``` | ```[PrinterURL]/api/plugin/tasmota``` |
+|  ``` { "command":"checkStatus", "ip": "<IP of tasmota device in settings>" }``` | ```[PrinterURL]/api/plugin/tplinksmartplug``` |
 
 
 ### [Tasmota](https://github.com/jneilliii/OctoPrint-Tasmota)
