@@ -28,7 +28,7 @@ If you've successfully run through all of the system prep for the repositories t
 ### 2.1 Install pm2 (Service Manager)
 - Due to some update dependencies in V1.2+ we need to update our local npm version to the latest.
 ```
-sudo npm install npm@latest -g
+npm install npm@latest -g
 ```
 
 ### 2.2 Install pm2 (Service Manager)
