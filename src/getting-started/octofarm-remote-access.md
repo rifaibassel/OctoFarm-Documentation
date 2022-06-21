@@ -1,20 +1,18 @@
 # Remote Access Setup.
-Due to some legacy code from when OctoFarm was a single page html file it is currently impossible to host your OctoFarm instance on the internet without also hosting your OctoPrint instances with it.
-That is not recommended at all as it would leave your OctoPrint instance exposed to the internet.
 
-There is the same caveat for your web camera's as well, as they would require been directly accessible via the internet due to no internal routing happening with these requests.
-
-Currently until this changes (set for 2.X release) then the best method of accessing OctoFarm remotely is with a VPN. There are various methods to setup a VPN detailed below, my personal favourite is WireGuard for it's simplicity.
-
+##Reverse Proxy
+You can host OctoFarm behind a reverse proxy and use local connections to your camera and octoprint hosts. OctoFarm proxies all commands through itself so it can be at the front end of your network and keeping all your octoprint instances hidden and secured. Only OctoFarm requires access to your OctoPrint instances. The only functionality you will lose is been able to open the OctoPrint GUI from OctoFarm as that will still require local access to OctoPrint. 
 ::: warning
-If you choose to host OctoFarm itself behind a reverse proxy, or with an open port then you do so at your own risk. I do not recommend this setup as it's not been verified to be secure and you'll also loose the ability to send commands to your OctoPrint instances due to legacy code within the client.
+If you choose to host OctoFarm itself behind a reverse proxy, or with an open port then you do so at your own risk. OctoFarm is setup to be relatively secure but I am yet to full check it over. 
 :::
 
+## VPN
+OctoFarm works fine over VPN, you also have the added benefit of been able to access your OctoPrint web GUI when needed. 
 ::: danger
 It's not recommended to put the VPN server on the same host as OctoFarm if your running a Pi4 or similar system. This can quite easily saturate the network connection on the Pi, and increase CPU usage.
 :::
 
-## VPN Recommendations
+### VPN Recommendations
 Below are just a few recommendations of the many available VPN solutions.
  - OpenVPN
  - WireGuard
