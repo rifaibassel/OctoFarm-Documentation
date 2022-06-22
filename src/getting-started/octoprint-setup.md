@@ -39,12 +39,3 @@ This the way to get there:
 > OctoPrint Settings (wrench icon) > Access Control > Edit the user you want (crayon icon)
 
 ![image](https://user-images.githubusercontent.com/6005355/108240729-67a0a800-714b-11eb-9fa0-f551da95e749.png)
-
-## Turning on CORS
-![OctoPrint CORS Settings](../images/octoprint/octoprint-cors.png)
-Enable CORS in the OctoPrint settings and restart your OctoPrint instance.
-
-::: danger
-OctoFarms client requires CORS to be turned on so that it may communicate with your OctoPrint instances properly. If not enabled commands will fail to be sent to your printers!
-TL;DR enable CORS please ❤️ 
-:::
