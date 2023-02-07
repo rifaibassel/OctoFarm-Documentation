@@ -10,28 +10,23 @@ Windows 7 was EOL a while ago, and NodeJS dropped support for it, so it's imposs
 First we need to prep the system for the required applications used to run OctoFarm.
 
 ### 1.1 Download and Install the pre-requisites
-- Download and Install the latest version of git
+- Download and Install the latest version of git: [Git Downloads](https://git-scm.com/download/win)
+- Download Version 4.4.17 of MongoDB (V5.X+ is not supported at this time): [mongodb-windows-x86_64-4.4.17.zip](https://fastdl.mongodb.org/windows/mongodb-windows-x86_64-4.4.17.zip)
 
-[Git Downloads](https://git-scm.com/download/win)
-
-- Download and Install Version V4.x of MongoDB (V5.X is not supported at this time)
-
-[MongoDB Community Downloads](https://www.mongodb.com/try/download/community)
-
-- Download and install the latest V14 LTS NodeJS
-
-[NodeJS Downloads](https://nodejs.org/download/release/v14.19.0/)
+  Extract zip file locally on your computer and then run Command Prompt as Administrator and run the following commands (use the extraction path).
+  ```
+  mkdir c:\data
+  mkdir c:\data\db
+  mkdir c:\data\logs
+  c:\path_to_monogo\bin\mongod.exe --install --logpath c:\data\logs\mongod.log
+  net start MongoDB
+  ```
+- Download and install latest LTS NodeJS (tested with v16 & v18), include npm package manager during install: [NodeJS Downloads](https://nodejs.org/en/download/)
 
 ## 2. Install OctoFarm's requirements
 If you've successfully run through all of the system prep for the repositories then we can continue to install the applications from them.
 
 ### 2.1 Install pm2 (Service Manager)
-- Due to some update dependencies in V1.2+ we need to update our local npm version to the latest.
-```
-npm install npm@latest -g
-```
-
-### 2.2 Install pm2 (Service Manager)
 - OctoFarm uses a process manager called 'pm2'. Install it globally with the below command. OctoFarm's internal processes require this manager to action some internal commands like "Restart" and "Update".
 
 - Open up "CMD" or "PowerShell" and run the following command.
